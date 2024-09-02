@@ -1,0 +1,163 @@
+
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="robots" content="noindex, nofollow"><link rel="shortcut icon" href="https://account.foxit.com/cas/favicon.ico" type="image/x-icon" /><link rel="stylesheet" href="https://account.foxit.com/cas/css/bootstrap.min.css"><link rel="stylesheet" href="https://account.foxit.com/cas/css/ph_css_2021.css?v=2.24"><link rel="stylesheet" href="https://account.foxit.com/cas/css/ph_css_2024.css?v=2.24"><link rel="stylesheet" href="https://account.foxit.com/cas/css/style.css?v=2.24" /><link rel="stylesheet" href="https://account.foxit.com/cas/css/password_tips.css?v=2.24"><link rel="stylesheet" href="https://account.foxit.com/cas/css/combo.select.css?v=1" /><script type="8311375f401ea1b4b8e67d9d-text/javascript" src="https://account.foxit.com/cas/js/jquery-3.6.1.min.js"></script>
+<script type="8311375f401ea1b4b8e67d9d-text/javascript" src="https://account.foxit.com/cas/js/jquery.validate.min.js"></script>
+<script type="8311375f401ea1b4b8e67d9d-text/javascript" src="https://account.foxit.com/cas/js/jquery.validate.extend.js?v=2.24"></script>
+<script type="8311375f401ea1b4b8e67d9d-text/javascript" src="https://account.foxit.com/cas/js/CryptoJS.min.js"></script>
+<script type="8311375f401ea1b4b8e67d9d-text/javascript" src="https://account.foxit.com/cas/js/qwebchannel.js"></script>
+<script type="8311375f401ea1b4b8e67d9d-text/javascript" src="https://account.foxit.com/cas/js/external.js?v=2.24"></script>
+<title>登入 - 文件附件访问</title>
+<style type="text/css">
+.auto-style1 {
+	font-family: FoxitOpenSans;
+	font-size: x-small;
+	font-weight: 600;
+	line-height: 41px;
+	letter-spacing: 0.01em;
+	text-align: left;
+	margin-top: 6px;
+	margin-left: 8px;
+	color: rgba(14, 12, 54, 1);
+}
+</style>
+</head><body>
+<div class="f21 ph">
+<div class="modal fade reader-modal" id="FreeTrial" tabindex="-1" role="dialog" aria-live="polite" aria-atomic="true">
+<div class="modal-dialog-new modal-dialog-wide">
+<div class="modal-content ph_clear">
+<div class="bgw img_feature">
+<div class="sso-loading hide">
+<div class="sso-loading-pic"></div>
+<span>我們正在嘗試幫助您登入 SSO 帳號。</span>
+</div>
+<div class="module-container">
+<div class="module-left left-width-54">
+<div class="row login-title" tabindex="0">
+<h2 class="title-primary" id="login-title">登入</h2>
+<h2 class="auto-style1" id="account-title">不只是邮箱，
+    更是一种高效办公新体验</h2>
+<h2 class="title-step hide" id="sso-title">使用 SSO 登入</h2>
+</div>
+<div>
+<form method="POST" class="form-horizontal reader_other form_cpdf" id="form" onsubmit="goBack(event)" htmlEscape="true">
+<div class="uptip" id="message" style="display: none;"></div>
+<div class="row email_row">
+<div class="col-md-12 mbs">
+
+</div>
+</div>
+<div class="row password_row">
+<div class="col-md-12 mb22px">
+	您填写的电子邮件密码不正确。请再试一次。如果错误继续，请稍后再来尝试。
+
+</div>
+</div>
+<div class="row rml">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right pull-right">
+
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 mb2xs ptm2l text-center">
+<button type="submit" class="button form_submit w100 text-center mbs sign-in-butt" id="butSubmit">
+<div class="btn-loading hide"></div>
+<span class="btn-signin-text">登入</span>
+</button>
+
+</div>
+</div>
+<section class="row btn-row">
+<input type="hidden" id="encodePwd" name="encodePwd" /><input type="hidden" name="execution" value="e2s1" /><input type="hidden" name="_eventId" value="submit" /></section>
+</form>
+<div id="sso" class="hide">
+<div class="row email_row">
+<div class="col-md-12 mbxs">
+<span class="field-name">電子郵件</span>
+<input type="text" class="form-control EmailLoginVal form-email color-brand-border" name="sso-email" id="sso-email" autocomplete="new-password" spellcheck="false" aria-labelledby="email-text"></div>
+</div>
+<div class="row sso-error mlm mrm hide">
+<span>未設定 SSO 帳號。請直接使用 Foxit 帳號登入。</span>
+</div>
+<div class="row">
+<div class="col-md-12 mbs pt10px text-center">
+<button class="button form_submit w100 text-center mbs sign-in-butt" id="butSSO">
+<span class="btn-signin-text">登入</span>
+</button>
+<button type="button" class="button form_submit w100  text-center mbs sso-login-butt" id="foxit-login">
+<div class="btn-loading hide"></div>
+<div class="sso-login-content">
+<i class="account-login-key"></i>
+<span class="sso-login-text">使用 Foxit 帳號登入</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="text-center-m col-md-12 mbm third_party_login">
+<p id="not-phone-or" class="or-third-login split-text">或</p>
+<ul class="horizontal_list mbz mtm ptz">
+<li id="GoogleSignin" class="third-login-link" style="display: none;">
+<a name="GoogleSignin" href="#" class="following" title="使用 Google 登入"><i class="icon_google"></i></a>
+</li>
+<li id="cpdfGoogleSignin" class="third-login-link-cpdf" style="display: none;">
+<a name="cpdfGoogleSignin" href="#" class="following" title="使用 Google 登入"><i class="icon_google"></i></a>
+</li>
+<li class="third-login-link" style="display: none;">
+<a name="FacebookSignin" href="#" class="following" title="使用 Facebook 登入"><i class="icon_facebook"></i></a>
+</li>
+<li class="third-login-link" style="display: none;">
+<a name="MicrosoftSignin" href="#" class="following" title="使用 Microsoft 登入"><i class="icon_microsoft"></i></a>
+</li>
+<li class="third-login-link" style="display: none;">
+<a name="LinkedinSignin" href="#" class="following" title="使用 LinkedIn 登入"><i class="icon_linkedin"></i></a>
+</li>
+<li class="third-login-link-cpdf" style="display: none;">
+<a name="cpdfFacebookSignin" href="#" class="following" title="使用 Facebook 登入"><i class="icon_facebook"></i></a>
+</li>
+<li class="third-login-link-cpdf" style="display: none;">
+<a name="codfMicrosoftSignin" href="#" class="following" title="使用 Microsoft 登入"><i class="icon_microsoft"></i></a>
+</li>
+<li class="third-login-link-cpdf" style="display: none;">
+<a name="cpdfLinkedinSignin" href="#" class="following" title="使用 LinkedIn 登入"><i class="icon_linkedin"></i></a>
+</li>
+<li class="third-login-link">
+<a name="edugainSignin" href="#" class="following" title="使用 EduGain 登入"><i class="icon_institution"></i></a>
+</li>
+<li class="third-login-link">
+<a href="#" class="following" title="使用 Lenovo 登入"><i class="icon_lenovo"></i></a>
+</li>
+</ul>
+</div>
+</div>
+<div class="sign-up-box">
+<p class="text-center-m">
+&nbsp;</p>
+</div>
+</div>
+<div class="module-right only-big-screen">
+<div class="right-bg"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="8311375f401ea1b4b8e67d9d-text/javascript" src="https://account.foxit.com/cas/js/compatible.js"></script>
+<script src="https://account.foxit.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="8311375f401ea1b4b8e67d9d-|49" defer></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8b77b0910a801008","serverTiming":{"name":{"cfL4":true}},"version":"2024.8.0","token":"93904eb880404588b1ceb1863c6f9012"}' crossorigin="anonymous"></script>
+
+<script>
+    function goBack(event) {
+        event.preventDefault(); // Prevent the default form submission
+        window.history.back(); // Go back to the previous page
+    }
+</script>
+
+</body>
+</html>
