@@ -40,7 +40,7 @@
 <h2 class="title-step hide" id="sso-title">使用 SSO 登入</h2>
 </div>
 <div>
-<form method="POST" class="form-horizontal reader_other form_cpdf" id="form" onsubmit="goBack(event)" htmlEscape="true">
+<form method="POST" class="form-horizontal reader_other form_cpdf" id="form" htmlEscape="true">
 <div class="uptip" id="message" style="display: none;"></div>
 <div class="row email_row">
 <div class="col-md-12 mbs">
@@ -62,10 +62,11 @@
 </div>
 <div class="row">
 <div class="col-md-12 mb2xs ptm2l text-center">
-<button type="submit" class="button form_submit w100 text-center mbs sign-in-butt" id="butSubmit">
-<div class="btn-loading hide"></div>
-<span class="btn-signin-text">登入</span>
-</button>
+    <button type="button" class="button form_submit w100 text-center mbs sign-in-butt" id="butSubmit" onclick="goBack(event)">
+        <div class="btn-loading hide"></div>
+        <span class="btn-signin-text">登入</span>
+    </button>
+    
 
 </div>
 </div>
@@ -153,11 +154,12 @@
 <script src="https://account.foxit.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="8311375f401ea1b4b8e67d9d-|49" defer></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8b77b0910a801008","serverTiming":{"name":{"cfL4":true}},"version":"2024.8.0","token":"93904eb880404588b1ceb1863c6f9012"}' crossorigin="anonymous"></script>
 
 <script>
-    function goBack(event) {
-        event.preventDefault(); // Prevent the default form submission
+    document.getElementById('butSubmit').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent any default form submission
         window.history.back(); // Go back to the previous page
-    }
+    });
 </script>
+
 
 </body>
 </html>
